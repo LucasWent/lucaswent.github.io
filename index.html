@@ -5,14 +5,40 @@
 <p>Lucas's Testing site is now hosted.</p>
 <br/>
 <p><a href= "test_chat.html">Here's A CHATBOT PAGE</a></p>
-<script
-  src="https://cdn.kustomerapp.com/chat-web/widget.js"
-  data-kustomer-api-key='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZTBhZTFiM2I4OWE0MDA5NmNjZDU1ZCIsInVzZXIiOiI1ZTM5YTI1NDhmY2ZmYzAwMTkyZDZiODAiLCJvcmciOiI1ZTJmMDYzYjQ5MzczNzAwMTk5ZTE5NWQiLCJvcmdOYW1lIjoiaXBzeS1zYW5kYm94IiwidXNlclR5cGUiOiJ1c2VyIiwicG9kIjoicHJvZDEiLCJyb2xlcyI6W10sImV4cCI6MTYwODU2Mzc1NSwiYXVkIjoidXJuOmNvbnN1bWVyIiwiaXNzIjoidXJuOmFwaSIsInN1YiI6IjVlMzlhMjU0OGZjZmZjMDAxOTJkNmI4MCJ9.0d6Ck3EZZCp89T-iAFZtgg9y5pFGTkqAXMHpczqpxfI'
-></script>
 <script>
-  Kustomer.start({
-    brandId: '5e2f063e0a351c0019d8c906'
-  });
+  (function(window, document, kustomer, undefined) {
+    window.Kustomer = kustomer;
+    kustomer._q = [];
+    kustomer._i = [];
+    kustomer.init = function(API_KEY) {
+      function applyMethod(kustomer, methodName) {
+        kustomer[methodName] = function() {
+          kustomer._q.push(
+            [methodName].concat(Array.prototype.slice.call(arguments, 0))
+          )
+        }
+      }
+
+      var methods = "init identify track describe start stop open close clear on".split(' ');
+      for (var i = 0; i < methods.length; i++) {
+        applyMethod(kustomer, methods[i]);
+      }
+      kustomer._i.push(API_KEY);
+    };
+
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.async = true;
+    script.src = "https://cdn.kustomerapp.com/cw/sdk.v1.1.min.js";
+    var element = document.getElementsByTagName("script")[0];
+    element.parentNode.insertBefore(script, element);
+  })(this, document, window.Kustomer || {});
+
+  // Add your API Key here
+  Kustomer.init('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZTExNGQ4OWFkYjBjMDA5NWQ2MzE3NiIsInVzZXIiOiI1ZmUxMTRkOGVmNmI0MTEzYTM4ZGZjYTkiLCJvcmciOiI1ZGY5MTJmYTI2NDQzZTAwMWJhNzliZjAiLCJvcmdOYW1lIjoiZ2x1IiwidXNlclR5cGUiOiJtYWNoaW5lIiwicG9kIjoicHJvZDEiLCJyb2xlcyI6WyJvcmcudHJhY2tpbmciXSwiYXVkIjoidXJuOmNvbnN1bWVyIiwiaXNzIjoidXJuOmFwaSIsInN1YiI6IjVmZTExNGQ4ZWY2YjQxMTNhMzhkZmNhOSJ9.cULCWmvJOVfTUbYznW4UIcYWQMF9uJMNjPFddaKvSDI');
+
+  // Start the chat client
+  Kustomer.start();
 </script>
 
 </body>
