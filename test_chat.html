@@ -7,11 +7,40 @@
 
   </head>
   <body>
-  <iframe
-    src="https://itv-vs-hub.kustomer.help/en_us/contact/hub-form-3-r1aKWUZS8">
-    frameborder="0"
-    width ="800"
-    height="1000"
-  </iframe>
+    <script>
+      (function(window, document, kustomer, undefined) {
+        window.Kustomer = kustomer;
+        kustomer._q = [];
+        kustomer._i = [];
+        kustomer.init = function(API_KEY) {
+          function applyMethod(kustomer, methodName) {
+            kustomer[methodName] = function() {
+              kustomer._q.push(
+                [methodName].concat(Array.prototype.slice.call(arguments, 0))
+              )
+            }
+          }
+
+          var methods = "init identify track describe start stop open close clear on".split(' ');
+          for (var i = 0; i < methods.length; i++) {
+            applyMethod(kustomer, methods[i]);
+          }
+          kustomer._i.push(API_KEY);
+        };
+
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.async = true;
+        script.src = "https://cdn.kustomerapp.com/cw/sdk.v1.1.min.js";
+        var element = document.getElementsByTagName("script")[0];
+        element.parentNode.insertBefore(script, element);
+      })(this, document, window.Kustomer || {});
+
+      // Add your API Key here
+      Kustomer.init('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMTMwZThmZWY5YTdkMDA4ZWMxMzQ4MSIsInVzZXIiOiI2MDEzMGU4ZTYwNjMxNDU1ODJiYmY2MzciLCJvcmciOiI1ZmM0ZmYxOTYyNTQ0YzA3ZjRjYjMzY2YiLCJvcmdOYW1lIjoienp6LWx1Y2FzLWhpbGRhIiwidXNlclR5cGUiOiJtYWNoaW5lIiwicG9kIjoicHJvZDEiLCJyb2xlcyI6WyJvcmcudHJhY2tpbmciXSwiYXVkIjoidXJuOmNvbnN1bWVyIiwiaXNzIjoidXJuOmFwaSIsInN1YiI6IjYwMTMwZThlNjA2MzE0NTU4MmJiZjYzNyJ9.rgcdEkPGvVgt08tTQbRShmtI7VQ2fkFigBkoa2Kpmks');
+
+      // Start the chat client
+      Kustomer.start();
+    </script>
   </body>
 </html>
