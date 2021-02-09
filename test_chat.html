@@ -6,41 +6,40 @@
 
 
   </head>
-  <body>
-    <script>
-    (function(window, document, kustomer, undefined) {
-      window.Kustomer = kustomer;
-      kustomer._q = [];
-      kustomer._i = [];
-      kustomer.init = function(API_KEY) {
-        function applyMethod(kustomer, methodName) {
-          kustomer[methodName] = function() {
-            kustomer._q.push(
-              [methodName].concat(Array.prototype.slice.call(arguments, 0))
-            )
-          }
+  <body><script>
+  (function(window, document, kustomer, undefined) {
+    window.Kustomer = kustomer;
+    kustomer._q = [];
+    kustomer._i = [];
+    kustomer.init = function(API_KEY) {
+      function applyMethod(kustomer, methodName) {
+        kustomer[methodName] = function() {
+          kustomer._q.push(
+            [methodName].concat(Array.prototype.slice.call(arguments, 0))
+          )
         }
+      }
 
-        var methods = "init identify track describe start stop open close clear on".split(' ');
-        for (var i = 0; i < methods.length; i++) {
-          applyMethod(kustomer, methods[i]);
-        }
-        kustomer._i.push(API_KEY);
-      };
+      var methods = "init identify track describe start stop open close clear on".split(' ');
+      for (var i = 0; i < methods.length; i++) {
+        applyMethod(kustomer, methods[i]);
+      }
+      kustomer._i.push(API_KEY);
+    };
 
-      var script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.async = true;
-      script.src = "https://cdn.kustomerapp.com/cw/sdk.v1.1.min.js";
-      var element = document.getElementsByTagName("script")[0];
-      element.parentNode.insertBefore(script, element);
-    })(this, document, window.Kustomer || {});
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.async = true;
+    script.src = "https://cdn.kustomerapp.com/cw/sdk.v1.1.min.js";
+    var element = document.getElementsByTagName("script")[0];
+    element.parentNode.insertBefore(script, element);
+  })(this, document, window.Kustomer || {});
 
-    // Add your API Key here
-    Kustomer.init('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMWMzM2M4YzZkZDBkMDA5NWUzODcyYSIsInVzZXIiOiI2MDFjMzNjODcxZDU3MDBlN2U4ODQ4M2QiLCJvcmciOiI1ZmM0ZmYxOTYyNTQ0YzA3ZjRjYjMzY2YiLCJvcmdOYW1lIjoienp6LWx1Y2FzLWhpbGRhIiwidXNlclR5cGUiOiJtYWNoaW5lIiwicG9kIjoicHJvZDEiLCJyb2xlcyI6WyJvcmcudHJhY2tpbmciXSwiYXVkIjoidXJuOmNvbnN1bWVyIiwiaXNzIjoidXJuOmFwaSIsInN1YiI6IjYwMWMzM2M4NzFkNTcwMGU3ZTg4NDgzZCJ9.kltdRtSR0Ye5NwBDUvUK0b0LS-ymKqg1Yt6hDVToi1k');
+  // Add your API Key here
+  Kustomer.init('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMjJhN2IwMTUwY2YwMDA4ZTQzMDUwNyIsInVzZXIiOiI2MDIyYTdhZjFkMGJkMjI5YzY0YzY5M2UiLCJvcmciOiI1ZDhlYWQ5ZTIyYWU5NDAwMTI0OTMwZjEiLCJvcmdOYW1lIjoic3VtbWVyc2FsdCIsInVzZXJUeXBlIjoibWFjaGluZSIsInBvZCI6InByb2QxIiwicm9sZXMiOlsib3JnLnRyYWNraW5nIl0sImF1ZCI6InVybjpjb25zdW1lciIsImlzcyI6InVybjphcGkiLCJzdWIiOiI2MDIyYTdhZjFkMGJkMjI5YzY0YzY5M2UifQ.uyXFcL_I8MH9eLEPDc-3La-fSv9Ctd9IUnPsQWZRYgU');
 
-    // Start the chat client
-    Kustomer.start();
-  </script>
+  // Start the chat client
+  Kustomer.start();
+</script>
   </body>
 </html>
