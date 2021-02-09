@@ -1,0 +1,46 @@
+</<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Lucas's Test Chatbot</title>
+
+
+  </head>
+  <body>
+    <script>
+  (function(window, document, kustomer, undefined) {
+    window.Kustomer = kustomer;
+    kustomer._q = [];
+    kustomer._i = [];
+    kustomer.init = function(API_KEY) {
+      function applyMethod(kustomer, methodName) {
+        kustomer[methodName] = function() {
+          kustomer._q.push(
+            [methodName].concat(Array.prototype.slice.call(arguments, 0))
+          )
+        }
+      }
+
+      var methods = "init identify track describe start stop open close clear on".split(' ');
+      for (var i = 0; i < methods.length; i++) {
+        applyMethod(kustomer, methods[i]);
+      }
+      kustomer._i.push(API_KEY);
+    };
+
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.async = true;
+    script.src = "https://cdn.kustomerapp.com/cw/sdk.v1.1.min.js";
+    var element = document.getElementsByTagName("script")[0];
+    element.parentNode.insertBefore(script, element);
+  })(this, document, window.Kustomer || {});
+
+  // Add your API Key here
+  Kustomer.init('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMjJkZmJiMzA0ZjY0MDA4ZmY4MTE3ZSIsInVzZXIiOiI2MDIyZGZiYjQ1MmRkOGYyNWVlOWNjZjciLCJvcmciOiI1YmU1Y2ZiYTBkNjFkZTAwMWM0ZGIyODYiLCJvcmdOYW1lIjoib3V0ZG9vcnN5IiwidXNlclR5cGUiOiJtYWNoaW5lIiwicG9kIjoicHJvZDEiLCJyb2xlcyI6WyJvcmcudHJhY2tpbmciXSwiYXVkIjoidXJuOmNvbnN1bWVyIiwiaXNzIjoidXJuOmFwaSIsInN1YiI6IjYwMjJkZmJiNDUyZGQ4ZjI1ZWU5Y2NmNyJ9.HowUMgrE_Kcf7K9JPD7JNP6_5vEUqCg7Ey0NZ7bNrBg');
+
+  // Start the chat client
+  Kustomer.start();
+</script>
+  </body>
+</html>
