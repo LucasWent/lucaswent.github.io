@@ -7,41 +7,15 @@
 
   </head>
   <body>
-    <script>
-      (function(window, document, kustomer, undefined) {
-        window.Kustomer = kustomer;
-        kustomer._q = [];
-        kustomer._i = [];
-        kustomer.init = function(API_KEY) {
-          function applyMethod(kustomer, methodName) {
-            kustomer[methodName] = function() {
-              kustomer._q.push(
-                [methodName].concat(Array.prototype.slice.call(arguments, 0))
-              )
-            }
-          }
-
-          var methods = "init identify track describe start stop open close clear on".split(' ');
-          for (var i = 0; i < methods.length; i++) {
-            applyMethod(kustomer, methods[i]);
-          }
-          kustomer._i.push(API_KEY);
-        };
-
-        var script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.async = true;
-        script.src = "https://cdn.kustomerapp.com/cw/sdk.v1.1.min.js";
-        var element = document.getElementsByTagName("script")[0];
-        element.parentNode.insertBefore(script, element);
-      })(this, document, window.Kustomer || {});
-
-      // Add your API Key here
-      Kustomer.init('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMzU1NzY5MGZjZjhjMDA5NTY4MTFhOCIsInVzZXIiOiI2MDM1NTc2OTg3NWNkNWY0MTRkZTk2N2IiLCJvcmciOiI1ZmM0ZmYxOTYyNTQ0YzA3ZjRjYjMzY2YiLCJvcmdOYW1lIjoienp6LWx1Y2FzLWhpbGRhIiwidXNlclR5cGUiOiJtYWNoaW5lIiwicG9kIjoicHJvZDEiLCJyb2xlcyI6WyJvcmcudHJhY2tpbmciXSwiYXVkIjoidXJuOmNvbnN1bWVyIiwiaXNzIjoidXJuOmFwaSIsInN1YiI6IjYwMzU1NzY5ODc1Y2Q1ZjQxNGRlOTY3YiJ9.1twT5mghhp6CTl1v8MBXBcsfifeLJnaNz0rAKd17MjY');
-
-      // Start the chat client
-      Kustomer.start();
-    </script>
+    <script
+    src="https://cdn.kustomerapp.com/chat-web/widget.js"
+    data-kustomer-api-key='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMzk2OWQ3ZDY0ZTQzMDA4ZTJiMDI5OCIsInVzZXIiOiI2MDM5NjlkNzhlOTdjYWQ3NWEzZTYyYTciLCJvcmciOiI1ZmM0ZmYxOTYyNTQ0YzA3ZjRjYjMzY2YiLCJvcmdOYW1lIjoienp6LWx1Y2FzLWhpbGRhIiwidXNlclR5cGUiOiJtYWNoaW5lIiwicG9kIjoicHJvZDEiLCJyb2xlcyI6WyJvcmcudHJhY2tpbmciXSwiYXVkIjoidXJuOmNvbnN1bWVyIiwiaXNzIjoidXJuOmFwaSIsInN1YiI6IjYwMzk2OWQ3OGU5N2NhZDc1YTNlNjJhNyJ9.agvpxKdGbFEGTDyOCYxoz9k0F1avSMCtjEMzzqwOKzY'
+  ></script>
+  <script>
+    Kustomer.start({
+      brandId: '5fc4ff1ff62d7a1cff603a20'
+    });
+  </script>
 
   </body>
 </html>
