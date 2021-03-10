@@ -7,40 +7,14 @@
 
   </head>
   <body>
+    <script
+      src="https://cdn.kustomerapp.com/chat-web/widget.js"
+      data-kustomer-api-key='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNDkyZGZkMTkyNzBiMDA4ZmEwZDMyMCIsInVzZXIiOiI2MDQ5MmRmYzU0NDIxYzQzMjU5YmRmMzIiLCJvcmciOiI1ZmM0ZmYxOTYyNTQ0YzA3ZjRjYjMzY2YiLCJvcmdOYW1lIjoienp6LWx1Y2FzLWhpbGRhIiwidXNlclR5cGUiOiJtYWNoaW5lIiwicG9kIjoicHJvZDEiLCJyb2xlcyI6WyJvcmcudHJhY2tpbmciXSwiYXVkIjoidXJuOmNvbnN1bWVyIiwiaXNzIjoidXJuOmFwaSIsInN1YiI6IjYwNDkyZGZjNTQ0MjFjNDMyNTliZGYzMiJ9.oQjhnUSKdABFj2BKlluZTYTiUW5O7VW8HXpthQTG_ZA'
+    ></script>
     <script>
-      (function(window, document, kustomer, undefined) {
-        window.Kustomer = kustomer;
-        kustomer._q = [];
-        kustomer._i = [];
-        kustomer.init = function(API_KEY) {
-          function applyMethod(kustomer, methodName) {
-            kustomer[methodName] = function() {
-              kustomer._q.push(
-                [methodName].concat(Array.prototype.slice.call(arguments, 0))
-              )
-            }
-          }
-
-          var methods = "init identify track describe start stop open close clear on".split(' ');
-          for (var i = 0; i < methods.length; i++) {
-            applyMethod(kustomer, methods[i]);
-          }
-          kustomer._i.push(API_KEY);
-        };
-
-        var script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.async = true;
-        script.src = "https://cdn.kustomerapp.com/cw/sdk.v1.1.min.js";
-        var element = document.getElementsByTagName("script")[0];
-        element.parentNode.insertBefore(script, element);
-      })(this, document, window.Kustomer || {});
-
-      // Add your API Key here
-      Kustomer.init('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNDE0NDViYWNlMDQyMDA4ZTc5OGE2OCIsInVzZXIiOiI2MDQxNDQ1NmM2ZjhmMzI0ZjE0NWFlZGUiLCJvcmciOiI1Y2M4OTcxNGM2MmNmNTAwMTM1NWVlNTIiLCJvcmdOYW1lIjoidGhyZWR1cCIsInVzZXJUeXBlIjoibWFjaGluZSIsInBvZCI6InByb2QxIiwicm9sZXMiOlsib3JnLnRyYWNraW5nIl0sImF1ZCI6InVybjpjb25zdW1lciIsImlzcyI6InVybjphcGkiLCJzdWIiOiI2MDQxNDQ1NmM2ZjhmMzI0ZjE0NWFlZGUifQ.iP-NqSf9z3Wbsg5i04rQO1HFX0ZaumhdFuIB5ZsKD5g');
-
-      // Start the chat client
-      Kustomer.start();
+      Kustomer.start({
+        brandId: '5fc4ff1ff62d7a1cff603a20'
+      });
     </script>
 
   </body>
