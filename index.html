@@ -7,14 +7,40 @@
 <p><a href= "test_chat.html">Here's ANOTHER CHATBOT PAGE</a></p><br/>
 <a href="outdoorsy_v1.html">Outdoorsy 1.0</a><br/>
 <a href="outdoorsy_v2.html">Outdoorsy 2.0</a><br/>
-<script
-  src="https://cdn.kustomerapp.com/chat-web/widget.js"
-  data-kustomer-api-key='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNDkzMmNiMTUwZDY2MDA4ZTcyMGY1NCIsInVzZXIiOiI2MDQ5MzJjYTYyNTFjOTIyYTEyNjE1NDkiLCJvcmciOiI1ZjIzM2FjM2E3Y2I1MTAwMTlhYzkyNTUiLCJvcmdOYW1lIjoiaGVsbG9hYm91bmQiLCJ1c2VyVHlwZSI6Im1hY2hpbmUiLCJwb2QiOiJwcm9kMSIsInJvbGVzIjpbIm9yZy50cmFja2luZyJdLCJhdWQiOiJ1cm46Y29uc3VtZXIiLCJpc3MiOiJ1cm46YXBpIiwic3ViIjoiNjA0OTMyY2E2MjUxYzkyMmExMjYxNTQ5In0._QG0OeWpHn8V7wn2xN64qh_YqW_c2KWc_rFVjgI0DrI'
-></script>
 <script>
-  Kustomer.start({
-    brandId: '5f233ac72e8e23001a3c073d'
-  });
+  (function(window, document, kustomer, undefined) {
+    window.Kustomer = kustomer;
+    kustomer._q = [];
+    kustomer._i = [];
+    kustomer.init = function(API_KEY) {
+      function applyMethod(kustomer, methodName) {
+        kustomer[methodName] = function() {
+          kustomer._q.push(
+            [methodName].concat(Array.prototype.slice.call(arguments, 0))
+          )
+        }
+      }
+
+      var methods = "init identify track describe start stop open close clear on".split(' ');
+      for (var i = 0; i < methods.length; i++) {
+        applyMethod(kustomer, methods[i]);
+      }
+      kustomer._i.push(API_KEY);
+    };
+
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.async = true;
+    script.src = "https://cdn.kustomerapp.com/cw/sdk.v1.1.min.js";
+    var element = document.getElementsByTagName("script")[0];
+    element.parentNode.insertBefore(script, element);
+  })(this, document, window.Kustomer || {});
+
+  // Add your API Key here
+  Kustomer.init('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNWNkZjE1YWM3MzY5MDA4ZjljY2Y5YyIsInVzZXIiOiI2MDVjZGYxMGZjOGMxNzAwMTkzOTkwMGIiLCJvcmciOiI1ZmM0ZmYxOTYyNTQ0YzA3ZjRjYjMzY2YiLCJvcmdOYW1lIjoienp6LWx1Y2FzLWhpbGRhIiwidXNlclR5cGUiOiJtYWNoaW5lIiwicG9kIjoicHJvZDEiLCJyb2xlcyI6WyJvcmcudHJhY2tpbmciXSwiYXVkIjoidXJuOmNvbnN1bWVyIiwiaXNzIjoidXJuOmFwaSIsInN1YiI6IjYwNWNkZjEwZmM4YzE3MDAxOTM5OTAwYiJ9.4JrOMEI7QhSxbNnJD1t1a7Id0k1TBmwf38x0Q6Jr5oA');
+
+  // Start the chat client
+  Kustomer.start();
 </script>
 <img src="https://www.paymerang.com/wp-content/uploads/2020/10/paymerang_sm_rgb_grd_pos.png" width="25%" style="vertical-align:middle;margin:15px 0px" />
 </body>
