@@ -7,41 +7,18 @@
 <p><a href= "test_chat.html">Here's ANOTHER CHATBOT PAGE</a></p><br/>
 <a href="outdoorsy_v1.html">Outdoorsy 1.0</a><br/>
 <a href="outdoorsy_v2.html">Outdoorsy 2.0</a><br/>
-<script>
-  (function(window, document, kustomer, undefined) {
-    window.Kustomer = kustomer;
-    kustomer._q = [];
-    kustomer._i = [];
-    kustomer.init = function(API_KEY) {
-      function applyMethod(kustomer, methodName) {
-        kustomer[methodName] = function() {
-          kustomer._q.push(
-            [methodName].concat(Array.prototype.slice.call(arguments, 0))
-          )
-        }
-      }
 
-      var methods = "init identify track describe start stop open close clear on".split(' ');
-      for (var i = 0; i < methods.length; i++) {
-        applyMethod(kustomer, methods[i]);
-      }
-      kustomer._i.push(API_KEY);
-    };
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.async = true;
-    script.src = "https://cdn.kustomerapp.com/cw/sdk.v1.1.min.js";
-    var element = document.getElementsByTagName("script")[0];
-    element.parentNode.insertBefore(script, element);
-  })(this, document, window.Kustomer || {});
-
-  // Add your API Key here
-  Kustomer.init('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNWNkZjE1YWM3MzY5MDA4ZjljY2Y5YyIsInVzZXIiOiI2MDVjZGYxMGZjOGMxNzAwMTkzOTkwMGIiLCJvcmciOiI1ZmM0ZmYxOTYyNTQ0YzA3ZjRjYjMzY2YiLCJvcmdOYW1lIjoienp6LWx1Y2FzLWhpbGRhIiwidXNlclR5cGUiOiJtYWNoaW5lIiwicG9kIjoicHJvZDEiLCJyb2xlcyI6WyJvcmcudHJhY2tpbmciXSwiYXVkIjoidXJuOmNvbnN1bWVyIiwiaXNzIjoidXJuOmFwaSIsInN1YiI6IjYwNWNkZjEwZmM4YzE3MDAxOTM5OTAwYiJ9.4JrOMEI7QhSxbNnJD1t1a7Id0k1TBmwf38x0Q6Jr5oA');
-
-  // Start the chat client
-  Kustomer.start();
-</script>
 <img src="https://www.paymerang.com/wp-content/uploads/2020/10/paymerang_sm_rgb_grd_pos.png" width="25%" style="vertical-align:middle;margin:15px 0px" />
+
+<script
+  src="https://cdn.kustomerapp.com/chat-web/widget.js"
+  data-kustomer-api-key='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwODg3MTA4MTMzZDA0MDA5MDEwYzVlZSIsInVzZXIiOiI2MDg4NzEwMzI0N2I4NTAwMTlhNjU2ODMiLCJvcmciOiI1ZWYyYTYzMDc3YmQ5ODAwMTMwMzEzODQiLCJvcmdOYW1lIjoibW9kbG9mdCIsInVzZXJUeXBlIjoibWFjaGluZSIsInBvZCI6InByb2QxIiwicm9sZXMiOlsib3JnLnRyYWNraW5nIl0sImF1ZCI6InVybjpjb25zdW1lciIsImlzcyI6InVybjphcGkiLCJzdWIiOiI2MDg4NzEwMzI0N2I4NTAwMTlhNjU2ODMifQ.N9J40GtWGQlL4SN6H6InHHWPjoVEQLwk55t2PwOagwE'
+></script>
+<script>
+  Kustomer.start({
+    brandId: '5ef2a634c8014200121333e9'
+  });
+</script>
+
 </body>
 </html>
