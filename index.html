@@ -7,6 +7,7 @@
 <p><a href= "test_chat.html">Here's ANOTHER CHATBOT PAGE</a></p><br/>
 <a href="outdoorsy_v1.html">Outdoorsy 1.0</a><br/>
 <a href="outdoorsy_v2.html">Outdoorsy 2.0</a><br/>
+<img src="https://www.paymerang.com/wp-content/uploads/2020/10/paymerang_sm_rgb_grd_pos.png" width="25%" style="vertical-align:middle;margin:15px 0px" />
 
 
 <script
@@ -16,11 +17,13 @@
 <script>
   Kustomer.start({
     brandId: '5fc4ff1ff62d7a1cff603a20'
-  });
+  }, () => {
+
   Kustomer.describeCustomer({
     attributes: {
     externalId: ['ABC123_Test']
   }
+});
 });
 
 </script>
