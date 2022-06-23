@@ -21,6 +21,30 @@
   },() => {
   Kustomer.openKbArticle('5fd22edd4f1a1e001a941de3');
 }) 
+const onConversationCreateHandler = function(response, error) {
+  if (error) {
+    console.error(error);
+    return;
+  }
+  Kustomer.describeConversation(
+    {
+      conversationId: response.conversationId,
+      customAttributes: {
+        nomeDaLojaStr
+: 'Nome Da Loja Testing!?!',
+      },
+    },
+    function(response, error) {
+      if (error) {
+        console.error(error);
+      } else {
+        console.log('Successfully described conversation');
+      }
+    }
+  );
+};
+
+Kustomer.addListener('onConversationCreate', onConversationCreateHandler);
   
 </script>
   </body>
