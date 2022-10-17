@@ -19,18 +19,13 @@
   data-kustomer-api-key='eyJhbGciOiJub25lIn0.eyJvcmdOYW1lIjoienp6LWx1Y2FzLWhpbGRhIiwicm9sZXMiOlsib3JnLnRyYWNraW5nIl19.'
 ></script>
 <script>
-  class YourChatWidget extends Component {
-  constructor(props) {
-    //...
-  }
-  
-  componentDidMount() {
-    KustomerCore.init();
-  }
-    
-  render() {
-    //...
-  }
+ KustomerCore.init({
+  brandId: '5fc4ff1ff62d7a1cff603a20'
+}, function (chatSettings) {
+  console.log(chatSettings);
+
+  KustomerCore.getConversations();
+});
 }
 </script>
 </body>
