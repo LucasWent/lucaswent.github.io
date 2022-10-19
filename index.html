@@ -15,18 +15,14 @@
 <a href="waitr_test.html">Waitr 2.0</a><br/>
 
 <script
-  src="https://cdn.kustomerapp.com/chat-web/core.js"
-  data-kustomer-api-key='eyJhbGciOiJub25lIn0.eyJvcmdOYW1lIjoienp6LWx1Y2FzLWhpbGRhIiwicm9sZXMiOlsib3JnLnRyYWNraW5nIl19.'
+  src="https://cdn.kustomerapp.com/chat-web/widget.js"
+  data-kustomer-api-key='eyJhbGciOiJub25lIn0.eyJvcmdOYW1lIjoidG9yY2giLCJyb2xlcyI6WyJvcmcudHJhY2tpbmciXX0.'
 ></script>
 <script>
- KustomerCore.init({
-  brandId: '5fc4ff1ff62d7a1cff603a20'
-}, function (chatSettings) {
-  console.log(chatSettings);
-
-  KustomerCore.getConversations();
-});
-
+  Kustomer.start({
+    brandId: '62a79e707ca6d32531b86e06'
+  });
 </script>
+
 </body>
 </html>
