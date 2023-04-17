@@ -19,9 +19,10 @@
   data-kustomer-api-key='eyJhbGciOiJub25lIn0.eyJvcmciOiI1ZmM0ZmYxOTYyNTQ0YzA3ZjRjYjMzY2YiLCJvcmdOYW1lIjoienp6LWx1Y2FzLWhpbGRhIiwicm9sZXMiOlsib3JnLnRyYWNraW5nIl19.'
 ></script>
 <script>
-  Kustomer.start({
-    brandId: '5fc4ff1ff62d7a1cff603a20', 
-    showBroswerNotifications: true
+
+  Kustomer.start({hideChatIcon: true, showBrowserNotifications: true,brandId: '5fc4ff1ff62d7a1cff603a20'}, () => {
+    console.log('Kustomer chat has started, but the icon is hidden!');
+    KustomerCore.init()
   });
 </script>
 
